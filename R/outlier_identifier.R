@@ -18,7 +18,8 @@
 #'                   )
 #'
 #'outlier_identifier(df)
-#'                    SepalLengthCm SepalWidthCm PetalWidthCmoutlier_count                  2            1            1
+#'                    SepalLengthCm SepalWidthCm PetalWidthCm
+#'outlier_count                  2            1            1
 #'outlier_percentage        18.18%        9.09%        9.09%
 #'mean                       13.63         3.19         0.77
 #'median                       5.1          1.5          0.4
