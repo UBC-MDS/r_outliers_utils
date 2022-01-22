@@ -1,4 +1,4 @@
-#' Trim Outliers
+A function to generate outlier free dataset by imputing them with mean, median or trim entire row with outlier from dataset.
 #'
 #' @param dataframe A target dataframe where the function is performed.
 #' @param columns The target columns where the function needed to be performed. Default is None, the function will check all columns.
