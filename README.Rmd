@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r include=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -13,12 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- #region -->
 # routliersutils
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of routliersutils is to ...
+## Overview
+As data rarely comes ready to be used and analyzed for machine learning right away, this package aims to help speed up the process of cleaning and doing initial exploratory data analysis specific to outliers. The package focuses on the tasks of identifying univariate outliers, providing summary of outliers like count, range of outliers, visualize them and giving functionality to remove them from data.
 
 ## Installation
 
@@ -34,27 +36,32 @@ And the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("UBC-MDS/r_outliers_utils")
 ```
-## Example
 
-This is a basic example which shows you how to solve a common problem:
+## Functions
+The three functions contained in this package are as follows:
 
-```{r example}
-library(routliersutils)
-## basic example code
-```
+- `outlier_identifier`: A function to identify outliers in the dataset and provide their summary as an output
+- `visualize_outliers`: A function to generate the eda plots highlighting outliers providing additional functionality to visualize them
+- `trim_outliers`: A function to generate outlier free dataset by imputing them with mean, median or trim entire row with outlier from dataset.
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## Our Place in the R Ecosystem
+While R packages with similar functionalities exist, this package aims to provide summary, visualization of outliers in a single package with an additional functionality to generate outlier-free dataset. Few packages with similar functionality are as follows:
 
-```{r cars}
-summary(cars)
-```
+- [univOutl](https://cran.r-project.org/web/packages/univOutl/univOutl.pdf)
+- [outliers](https://cran.r-project.org/web/packages/outliers/outliers.pdf)
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
 
-You can also embed plots, for example:
+## Usage
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+- TODO
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+## Contributing
+
+This package is authored by Karanpreet Kaur, Linhan Cai, Qingqing Song as part of the course project in DSCI-524 (UBC-MDS program). You can see the list of all contributors in the contributors tab.
+
+We welcome and recognize all contributions. If you wish to participate, please review our [Contributing guidelines](CONTRIBUTING.md)
+
+## License
+
+`routliersutils` is licensed under the terms of the MIT license.
+<!-- #endregion -->
