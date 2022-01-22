@@ -40,6 +40,12 @@ If you’ve found a bug, please file an issue that illustrates the bug with a mi
 *  We use [testthat](https://cran.r-project.org/package=testthat) for unit tests. 
    Contributions with test cases included are easier to accept.  
 
+### Submit Feedback
+If you are proposing a feature:
+
+- Explain in detail how it would work.
+- Keep the scope as narrow as possible, to make it easier to implement.
+- Remember that this is a volunteer-driven project, and that contributions are welcome :)
 ## Code of Conduct
 
 Please note that the routliersutils project is released with a
