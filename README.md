@@ -1,7 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Overview
+#routliersutils
+## Overview
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -47,15 +48,17 @@ summary(cars)
 #>  Max.   :25.0   Max.   :120.00
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+## Usage
 
-You can also embed plots, for example:
+- TODO
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+## Contributing
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+This package is authored by Karanpreet Kaur, Linhan Cai, Qingqing Song as part of the course project in DSCI-524 (UBC-MDS program). You can see the list of all contributors in the contributors tab.
+
+We welcome and recognize all contributions. If you wish to participate, please review our [Contributing guidelines](CONTRIBUTING.md)
+
+## License
+
+`routliersutils` was created by Karanpreet Kaur, Linhan Cai, Qingqing Song. It is licensed under the terms of the MIT license.
+
