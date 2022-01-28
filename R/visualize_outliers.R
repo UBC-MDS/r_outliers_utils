@@ -6,7 +6,7 @@
 #'
 #' @return A ggplot of data distribution.
 #' @import tidyverse
-#' @import ggplot2
+#' @importFrom ggplot2 geom_boxplot geom_violin
 #' @export
 #'
 #' @examples
@@ -19,7 +19,7 @@
 
 visualize_outliers <- function(dataframe, columns=NA, type='violin') {
 
-  ## Handle dataframe type error (Check if dataframe is of type Pandas DataFrame)
+  ## Handle dataframe type error (Check if input is a dataframe)
   if (!is.data.frame(dataframe) & !is_tibble(dataframe)) {
     stop("Passed dataframe should be DataFrame or tibble.")
   }
