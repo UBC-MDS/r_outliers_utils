@@ -8,6 +8,7 @@
 #' @export
 #'
 #' @examples
+#' library(tidyverse)
 #' df <- tibble(cola=c(1:5), colb=c(6:10), colc=c(11:15))
 #' visualize_outliers(df, columns=c("cola", "colb"), type="violin")
 visualize_outliers <- function(dataframe, columns=NA, type="violin") {
