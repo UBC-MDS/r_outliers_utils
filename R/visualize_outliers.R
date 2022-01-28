@@ -5,14 +5,17 @@
 #' @param type The method of plotting the distribution.
 #'
 #' @return A ggplot of data distribution.
+#' @import tidyverse
+#' @import ggplot2
 #' @export
 #'
 #' @examples
+#'
+#' library(tidyverse)
+#' library(ggplot2)
+#'
 #' df <- tibble(cola=c(1:5), colb=c(6:10), colc=c(11:15))
 #' visualize_outliers(df, columns=c("cola", "colb"), type="violin")
-
-library(tidyverse)
-library(ggplot2)
 
 visualize_outliers <- function(dataframe, columns=NA, type='violin') {
 
