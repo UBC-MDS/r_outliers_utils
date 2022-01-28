@@ -6,6 +6,10 @@
 #'
 #' @return A ggplot of data distribution.
 #' @import tidyverse
+#' @import tibble
+#' @import ggplot2
+#' @import dplyr
+#' @import tidyr
 #' @importFrom ggplot2 geom_boxplot geom_violin
 #' @export
 #'
