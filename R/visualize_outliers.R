@@ -10,7 +10,6 @@
 #' @import ggplot2
 #' @import dplyr
 #' @import tidyr
-#' @importFrom ggplot2 geom_boxplot geom_violin
 #' @export
 #'
 #' @examples
@@ -21,7 +20,7 @@
 #' df <- tibble(cola=c(1:5), colb=c(6:10), colc=c(11:15))
 #' visualize_outliers(df, columns=c("cola", "colb"), type="violin")
 
-visualize_outliers <- function(dataframe, columns=NA, type='violin') {
+visualize_outliers <- function(dataframe, columns=NULL, type='violin') {
 
   ## Handle dataframe type error (Check if input is a dataframe)
   if (!is.data.frame(dataframe) & !is_tibble(dataframe)) {
@@ -34,7 +33,7 @@ visualize_outliers <- function(dataframe, columns=NA, type='violin') {
   }
 
   ## Handle columns type error (Check if columns are None or type character)
-  if (!is.na(columns) & !is.character(columns)) {
+  if (!is.null(columns) & !is.character(columns)) {
     stop("Passed columns should be list or NoneType.")
   }
 
@@ -44,31 +43,34 @@ visualize_outliers <- function(dataframe, columns=NA, type='violin') {
   }
 
   ## Check columns
-  if (is.na(columns)){
-    columns <- c(colnames(df))
+  if (is.null(columns)){
+    columns <- names(dataframe)
   }
 
+  df_filtered <-  dataframe |>
+    select(columns)
+
+  numeric_columns = names(select_if(df_filtered, is.numeric))
+
   ## Pivot dataframe
-  dataframe <- dataframe |>
-    select(columns) |>
-    pivot_longer(cols=columns)
+  dataframe <- df_filtered |>
+    select(numeric_columns) |>
+    pivot_longer(cols=numeric_columns)
 
   ## Check type and plot
   if (type == 'violin') {
-    p <- dataframe |>
-      ggplot(aes(name, value)) +
-      geom_violin(aes(fill = name)) +
-      facet_wrap(facets = ~name, ncol = 4) +
+    p <- ggplot(dataframe, aes(.data$name, .data$value)) +
+      geom_violin(aes(fill = .data$name)) +
+      facet_wrap(facets = ~.data$name, ncol = 4) +
       labs(y = "Value", x = "Variables") +
       ggtitle("Data distribution") +
       theme_bw()+
       theme(axis.text.x = element_text(angle = 90),
             legend.position = "none")
   } else if (type == 'boxplot') {
-    p <- dataframe |>
-      ggplot(aes(name, value)) +
-      geom_boxplot(aes(fill = name)) +
-      facet_wrap(facets = ~name, ncol = 4) +
+    p <- ggplot(dataframe, aes(.data$name, .data$value)) +
+      geom_boxplot(aes(fill = .data$name)) +
+      facet_wrap(facets = ~.data$name, ncol = 4) +
       labs(y = "Value", x = "Variables") +
       ggtitle("Data distribution") +
       theme_bw()+
