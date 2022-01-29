@@ -4,7 +4,12 @@
 \alias{trim_outliers}
 \title{A function to generate outlier free dataset by imputing them with mean, median or trim entire row with outlier from dataset.}
 \usage{
-trim_outliers(dataframe, columns = NA, identifier = "Z_score", method = "trim")
+trim_outliers(
+  dataframe,
+  columns = NULL,
+  identifier = "Z_score",
+  method = "trim"
+)
 }
 \arguments{
 \item{dataframe}{A target dataframe where the function is performed.}
