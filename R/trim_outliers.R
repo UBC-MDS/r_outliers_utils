@@ -20,15 +20,10 @@
 #'                   )
 #'
 #'trim_outliers(df,identifier='Z_score', method='trim')
-
-```{r}
 trim_outliers <- function(dataframe, columns=NULL, identifier='Z_score', method='trim') {
-  
-  
   if (!is.data.frame(dataframe)) {
     stop("The argument dataframe is not dataframe")
   }
-  
   # check if there is non-numeric column
   if (is.null(columns)) {
     if (sum(unlist(lapply(dataframe, is.numeric))) != length(dataframe)) {
@@ -46,26 +41,20 @@ trim_outliers <- function(dataframe, columns=NULL, identifier='Z_score', method=
       }
     }
   }
-  
   # check if method input is valid
   if (!method %in% c("trim", "median", "mean")) {
     stop("The given method must be one of ('trim', 'median', 'mean')")
   }
-  
   df_cp <- data.frame(dataframe)
   if (is.null(columns)) {
     columns <- names(df_cp)
   }
-  
   outlier_index <- c()
-  
   for (col in columns) {
     current_col <- df_cp[col]
     col_mean <- apply(current_col, 2, mean)
     col_std <- apply(current_col, 2, sd)
     threshold <- 2.5
-    
-    
     for (i in 1:nrow(df_cp)) {
       current_item <- current_col[i, ]
       z = (current_item - col_mean) / col_std
@@ -82,13 +71,9 @@ trim_outliers <- function(dataframe, columns=NULL, identifier='Z_score', method=
       }
     }
   }
-  
   if (method == "trim" & !is.null(outlier_index)) {
     df_cp <- df_cp[-outlier_index,]
   }
-  
   row.names(df_cp) <- NULL
-  
   return(df_cp)
 }
-```
