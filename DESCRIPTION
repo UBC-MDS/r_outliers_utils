@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Karanpreet", "Kaur", , "karanpreet088@gmail.com", role = c("aut", "cre"))
     person("Linhan", "Cai", , "1209560233@qq.com", role = c("aut", "cre"))
-    person("Qingqing", "Song", , "1209560233@qq.com", role = c("aut", "cre"))
+    person("Qingqing", "Song", , "song.qingqing1001@gmail.com", role = c("aut", "cre"))
 Description: As data rarely comes ready to be used and analyzed for machine learning right away, this package aims to help speed up the process of cleaning and doing initial exploratory data analysis specific to outliers. The package focuses on the tasks of identifying univariate outliers, providing summary of outliers like count, range of outliers, visualize them and giving functionality to remove them from data.
 Imports: 
     tidyverse,
