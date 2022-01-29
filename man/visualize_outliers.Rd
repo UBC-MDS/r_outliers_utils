@@ -4,7 +4,7 @@
 \alias{visualize_outliers}
 \title{A function that plot out the given data with outliers marked.}
 \usage{
-visualize_outliers(dataframe, columns = NA, type = "violin")
+visualize_outliers(dataframe, columns = NULL, type = "violin")
 }
 \arguments{
 \item{dataframe}{A target dataframe where the function is performed.}
@@ -14,13 +14,16 @@ visualize_outliers(dataframe, columns = NA, type = "violin")
 \item{type}{The method of plotting the distribution.}
 }
 \value{
-A ggplot with data distribution.
+A ggplot of data distribution.
 }
 \description{
 A function that plot out the given data with outliers marked.
 }
 \examples{
+
 library(tidyverse)
+library(ggplot2)
+
 df <- tibble(cola=c(1:5), colb=c(6:10), colc=c(11:15))
 visualize_outliers(df, columns=c("cola", "colb"), type="violin")
 }
