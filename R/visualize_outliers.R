@@ -10,6 +10,7 @@
 #' @import ggplot2
 #' @import dplyr
 #' @import tidyr
+#' @import rlang
 #' @export
 #'
 #' @examples
