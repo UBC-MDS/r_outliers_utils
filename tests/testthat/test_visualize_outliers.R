@@ -18,12 +18,12 @@ test_that("Error in input type", {
 ## Test output
 test_that('Plot should use geom_violin in default and map value to x-axis, and variables to y-axis, also facet.', {
   expect_true("GeomViolin" %in% c(class(visualize_outliers(df, columns='SepalLengthCm')$layers[[1]]$geom)))
-  expect_true(".data$name"  == rlang::get_expr(visualize_outliers(df, columns='SepalLengthCm')$mapping$x))
-  expect_true(".data$value" == rlang::get_expr(visualize_outliers(df, columns='SepalLengthCm')$mapping$y))
+  expect_true(".data$name"  == get_expr(visualize_outliers(df, columns='SepalLengthCm')$mapping$x))
+  expect_true(".data$value" == get_expr(visualize_outliers(df, columns='SepalLengthCm')$mapping$y))
   expect_true("FacetWrap" %in% c(class(visualize_outliers(df, columns='SepalLengthCm')$facet)))
 })
 test_that('Plot should have selected columns by default.', {
-  expect_true("SepalLengthCm" %in% unique(rlang::get_expr(visualize_outliers(df,columns=c('SepalLengthCm', 'SepalWidthCm'))$data$name)))
-  expect_true("SepalWidthCm" %in% unique(rlang::get_expr(visualize_outliers(df,columns=c('SepalLengthCm', 'SepalWidthCm'))$data$name)))
-  expect_false("PetalWidthCm" %in% unique(rlang::get_expr(visualize_outliers(df,columns=c('SepalLengthCm', 'SepalWidthCm'))$data$name)))
+  expect_true("SepalLengthCm" %in% unique(get_expr(visualize_outliers(df,columns=c('SepalLengthCm', 'SepalWidthCm'))$data$name)))
+  expect_true("SepalWidthCm" %in% unique(get_expr(visualize_outliers(df,columns=c('SepalLengthCm', 'SepalWidthCm'))$data$name)))
+  expect_false("PetalWidthCm" %in% unique(get_expr(visualize_outliers(df,columns=c('SepalLengthCm', 'SepalWidthCm'))$data$name)))
 })
