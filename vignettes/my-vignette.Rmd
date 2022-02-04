@@ -1,0 +1,61 @@
+---
+title: "How to use routlierutils"
+author: "Karanpreet Kaur, Linhan Cai, Qingqing Song"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+Here we will demonstrate how to use py_outliers_utils to deal with the outliers in a dataset and plot the distribution of the dataset:
+
+## Libarary package
+
+```{r setup}
+library(routliersutils)
+```
+
+## Create a dataframe
+We need to create a dataframe to work with.
+
+```{r}
+df <- data.frame(SepalLengthCm = c(5.1, 4.9, 4.7, 5.5, 5.1, 10, 54, 5.0, 5.2, 5.3, 5.1),
+                          SepalWidthCm = c(1.4, 1.4, 10, 2.0, 0.7, 1.6, 1.2, 1.4, 1.8, 1.5, 2.1),
+                          PetalWidthCm = c(0.2, 0.2, 0.2, 0.3, 0.4, 0.5, 0.5, 0.6, 0.4, 0.2, 5))
+df
+```
+
+## Identify outliers
+We can identify outliers using `outlier_identifier`. Note that this function will return a dataframe with the summary of the outlier identified by the method, with an additional column having if row has outlier or not if return_df = True.
+
+```{r}
+outlier_identifier(df, columns=c('SepalWidthCm',  'PetalWidthCm'), return_df=FALSE)
+```
+## Trim outliers
+We can trim outliers using `trim_outliers`. This function will return a dataframe which the outlier has already process by the chosen method.
+
+```{rpkgdown::build_site()}
+trim_outliers(df,identifier='Z_score', method='trim')
+```
+## Visualize outliers
+We can trim outliers using `visualize_outliers`. This function will return a ggplot of data distribution with given method.
+
+```{r, fig.width=7, fig.height=4}
+visualize_outliers(df, columns=c("SepalWidthCm", "PetalWidthCm"), type="violin")
+```
+
+
+
+
+
+
+
+
+
