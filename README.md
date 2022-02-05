@@ -4,6 +4,10 @@
 
 # routliersutils
 
+[![ci-cd](https://github.com/UBC-MDS/routliersutils/actions/workflows/check-standard.yml/badge.svg)](https://github.com/UBC-MDS/routliersutils/actions/workflows/check-standard.yml)
+
+[![codecov](https://codecov.io/gh/UBC-MDS/routliersutils/branch/main/graph/badge.svg?token=HLOU5SGBKH)](https://codecov.io/gh/UBC-MDS/routliersutils)
+
 <!-- badges: start -->
 <!-- badges: end -->
 
@@ -18,17 +22,11 @@ them and giving functionality to remove them from data.
 
 ## Installation
 
-You can install the released version of routliersutils from
-[CRAN](https://CRAN.R-project.org) with:
+You can install then development version from
+[GitHub](https://github.com/) with:
 
 ``` r
-install.packages("routliersutils")
-```
-
-And the development version from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
+# install.packages("devtools") # run this line first if `devtools` package is not installed in your local.
 devtools::install_github("UBC-MDS/r_outliers_utils")
 ```
 
@@ -57,7 +55,28 @@ packages with similar functionality are as follows:
 
 ## Usage
 
--   TODO
+The routliersutils package help you to build exploratory data analysis.
+
+routliersutils includes multiple functions to perform initial EDA
+specific to outliers. The generated output for outliers can be obtained
+in the form of dataframe objects and graphical form.
+
+The routliersutils is capable of :
+
+-   Summarizing outliers and identify them in dataset
+-   Visualize them in boxplot and violin plot
+-   Trim or impute outliers with mean , median in dataset
+
+## Documentation
+
+Please find the detailed documentation in the
+[vignette](https://ubc-mds.github.io/r_outliers_utils/).
+
+##### Example usage to load package
+
+``` r
+library(routliersutils)
+```
 
 ## Contributing
 
