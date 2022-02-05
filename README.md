@@ -4,9 +4,8 @@
 
 # routliersutils
 
-[![ci-cd](https://github.com/UBC-MDS/routliersutils/actions/workflows/check-standard.yml/badge.svg)](https://github.com/UBC-MDS/routliersutils/actions/workflows/check-standard.yml)
-
-[![codecov](https://codecov.io/gh/UBC-MDS/routliersutils/branch/main/graph/badge.svg?token=HLOU5SGBKH)](https://codecov.io/gh/UBC-MDS/routliersutils)
+[![codecov](https://codecov.io/gh/UBC-MDS/r_outliers_utils/branch/main/graph/badge.svg?token=noFqX1BkyC)](https://codecov.io/gh/UBC-MDS/r_outliers_utils)
+[![ci-cd](https://github.com/UBC-MDS/r_outliers_utils/actions/workflows/check-standard.yml/badge.svg)](https://github.com/UBC-MDS/r_outliers_utils/actions/workflows/check-standard.yml)
 
 <!-- badges: start -->
 <!-- badges: end -->
