@@ -41,8 +41,8 @@ outlier_identifier(df, columns=c('SepalWidthCm',  'PetalWidthCm'), return_df=FAL
 ## Trim outliers
 We can trim outliers using `trim_outliers`. This function will return a dataframe which the outlier has already process by the chosen method.
 
-```{rpkgdown::build_site()}
-trim_outliers(df,identifier='Z_score', method='trim')
+```{r}
+trim_outliers(df,identifier='IQR', method='trim')
 ```
 ## Visualize outliers
 We can trim outliers using `visualize_outliers`. This function will return a ggplot of data distribution with given method.
