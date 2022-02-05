@@ -118,7 +118,17 @@
 <h2 id="trim-outliers">Trim outliers<a class="anchor" aria-label="anchor" href="#trim-outliers"></a>
 </h2>
 <p>We can trim outliers using <code>trim_outliers</code>. This function will return a dataframe which the outlier has already process by the chosen method.</p>
-<pre class="{rpkgdown::build_site()}"><code><span class="fu"><a href="../reference/trim_outliers.html">trim_outliers</a></span><span class="op">(</span><span class="va">df</span>,identifier<span class="op">=</span><span class="st">'Z_score'</span>, method<span class="op">=</span><span class="st">'trim'</span><span class="op">)</span></code></pre>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/trim_outliers.html">trim_outliers</a></span><span class="op">(</span><span class="va">df</span>,identifier<span class="op">=</span><span class="st">'IQR'</span>, method<span class="op">=</span><span class="st">'trim'</span><span class="op">)</span>
+<span class="co">#&gt;    SepalLengthCm SepalWidthCm PetalWidthCm</span>
+<span class="co">#&gt; 1            5.1          1.4          0.2</span>
+<span class="co">#&gt; 2            4.9          1.4          0.2</span>
+<span class="co">#&gt; 4            5.5          2.0          0.3</span>
+<span class="co">#&gt; 5            5.1          0.7          0.4</span>
+<span class="co">#&gt; 6           10.0          1.6          0.5</span>
+<span class="co">#&gt; 8            5.0          1.4          0.6</span>
+<span class="co">#&gt; 9            5.2          1.8          0.4</span>
+<span class="co">#&gt; 10           5.3          1.5          0.2</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="visualize-outliers">Visualize outliers<a class="anchor" aria-label="anchor" href="#visualize-outliers"></a>
@@ -126,7 +136,7 @@
 <p>We can trim outliers using <code>visualize_outliers</code>. This function will return a ggplot of data distribution with given method.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/visualize_outliers.html">visualize_outliers</a></span><span class="op">(</span><span class="va">df</span>, columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SepalWidthCm"</span>, <span class="st">"PetalWidthCm"</span><span class="op">)</span>, type<span class="op">=</span><span class="st">"violin"</span><span class="op">)</span></code></pre></div>
-<p><img src="my-vignette_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
+<p><img src="my-vignette_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
